@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>ReactJS + Spring Data REST</title>
+    <link rel="stylesheet" href="/main.css" />
+    <link href="//cdn.muicss.com/mui-0.9.39/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+</head>
+<body>
+    <header class="mui-appbar mui--z1">
+        <!-- tag::logout[] -->
+        <div class="mui-container">
+            <table>
+                <tr class="mui--appbar-height">
+                    <td class="mui--text-title">Brand.io</td>
+                    <td class="mui--text-right">
+                        <div>
+                            Hello, <span id="managername" th:text="${#authentication.name}">user</span>.
+                            <form th:action="@{/logout}" method="post">
+                                <input type="submit" value="Log Out"/>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- end::logout[] -->
+    </header>
+    <div class="mui-container"><div id="react"></div></div>
+
+
+    <script src="built/bundle.js"></script>
+
+</body>
+</html>
